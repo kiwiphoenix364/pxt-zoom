@@ -1,5 +1,5 @@
 {
-    "name": "pxt-camera-zoom",
+    "name": "pxt-zoom",
     "description": "",
     "dependencies": {
         "device": "*"
