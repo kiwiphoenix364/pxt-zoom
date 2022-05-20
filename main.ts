@@ -9,11 +9,11 @@ namespace Zoom {
             let precalc = [0]
             precalc = []
             for (let index3 = 0; index3 < 120; index3++) {
-                precalc.push(Math.constrain(index3 / size + ((120 - index3) / 2), 0, 119))
+                precalc.push(Math.constrain(index3 / size + (120 - (120 / size)) / 2, 0, 119))
             }
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                 for (let index = 0; index < 160; index++) {
-                    savedx = Math.constrain (index / size + ((160 - index) / 2), 0, 159)
+                    savedx = Math.constrain (index / size + (160 - (160 / size)) / 2, 0, 159)
                     for (let index2 = 0; index2 < 120; index2++) {
                         buf[index2] = image.getPixel(savedx, precalc[index2])
                     }
