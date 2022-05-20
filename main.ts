@@ -15,7 +15,7 @@ namespace Zoom {
             }
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                 for (let index = 0; index < 160; index++) {
-                    savedx = index
+                    savedx = index / size + (119 - 119 / size) / 2
                     for (let index2 = 0; index2 < 120; index2++) {
                         buf[index2] = image.getPixel(savedx, precalc[index2])
                     }
