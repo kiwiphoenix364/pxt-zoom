@@ -7,7 +7,14 @@ namespace Zoom {
             let savedx = 0
             let buf = Buffer.create(120)
             let precalc = [0]
+            let precalc2 = [0]
             precalc = []
+            precalc2 = []
+            for (let index1 = 0; index1 < 159 / size; index1++) {
+                for (let index2 = 0; index2 < size; index2++) {
+                precalc2.push(index1 + (159 - 159 / size) / 2)
+                }
+            }
             for (let index3 = 0; index3 < 119 / size; index3++) {
                 for (let index4 = 0; index4 < size; index4++) {
                 precalc.push(index3 + (119 - 119 / size) / 2)
@@ -15,9 +22,8 @@ namespace Zoom {
             }
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                 for (let index = 0; index < 160; index++) {
-                    savedx = index / size + (159 - 159 / size) / 2
                     for (let index2 = 0; index2 < 120; index2++) {
-                        buf[index2] = image.getPixel(savedx, precalc[index2])
+                        buf[index2] = image.getPixel(precalc2[index], precalc[index2])
                     }
                     image.setRows(index, buf)
                 }
