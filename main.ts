@@ -12,7 +12,7 @@ namespace Zoom {
             precalc2 = []
             for (let index5 = 0; index5 < 160 / size; index5++) {
                 for (let index6 = 0; index6 < size; index6++) {
-                    precalc2.push(index5 + (159 - 159 / size) / 2)
+                    precalc2.push(index5)
                 }
             }
         for (let index3 = 0; index3 < 120 / size; index3++) {
