@@ -10,13 +10,13 @@ namespace Zoom {
             let precalc2 = [0]
             precalc = []
             precalc2 = []
-            for (let index1 = 0; index1 < Math.ceil(159 / size); index1++) {
-                for (let index2 = 0; index2 < Math.ceil(size); index2++) {
-                    precalc2.push(index1 + (159 - 159 / size) / 2)
+            for (let index5 = 0; index5 < 159 / size; index5++) {
+                for (let index6 = 0; index6 < size; index6++) {
+                    precalc2.push(index5 + (159 - 159 / size) / 2)
                 }
             }
-        for (let index3 = 0; index3 < Math.ceil(119 / size); index3++) {
-            for (let index4 = 0; index4 < Math.ceil(size); index4++) {
+        for (let index3 = 0; index3 < 119 / size; index3++) {
+            for (let index4 = 0; index4 < size; index4++) {
                     precalc.push(index3 + (119 - 119 / size) / 2)
                 }
             }
