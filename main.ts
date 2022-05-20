@@ -10,7 +10,7 @@ namespace Zoom {
             precalc = []
             for (let index3 = 0; index3 < 119 / size; index3++) {
                 for (let index4 = 0; index4 < size; index4++) {
-                precalc.push(index3 + (119 - (index3 / size)))
+                precalc.push(index3 + (119 - index3))
                 }
             }
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
