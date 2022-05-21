@@ -19,7 +19,7 @@ namespace Zoom {
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                 for (let index5 = 0; index5 < 160; index5++) {
                     for (let index6 = 0; index6 < 120; index6++) {
-                        buf[index6] = image.getPixel(precalc2[index5] - 40, precalc[index6])
+                        buf[index6] = image.getPixel(precalc2[index5] + 80, precalc[index6])
                     }
                     image.setRows(index5, buf)
                 }
