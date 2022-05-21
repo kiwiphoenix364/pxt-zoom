@@ -10,7 +10,7 @@ namespace Zoom {
             let precalc2 = [0]
             precalc = []
             precalc2 = []
-            for (let index = 0; index < 320; index++) {
+            for (let index = 0; index < 160; index++) {
                     precalc2.push(Math.ceil(index / size + (240 - 159 / size) / 2))
             }
             for (let index3 = 0; index3 < 120; index3++) {
