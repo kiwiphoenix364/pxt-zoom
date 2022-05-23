@@ -11,6 +11,7 @@ namespace Zoom {
             precalc = []
             precalc2 = []
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
+                let screenclone = image.clone()
                 let left = (screen.width - screen.width / size) / 2
                 let top = (screen.height - screen.height / size) / 2
                 for (let index = 0; index < 160; index++) {
@@ -21,7 +22,7 @@ namespace Zoom {
                 }
                 for (let index5 = 0; index5 < 160; index5++) {
                     for (let index6 = 0; index6 < 120; index6++) {
-                        buf[index6] = image.clone().getPixel(precalc2[index5], precalc[index6])
+                        buf[index6] = image.getPixel(precalc2[index5], precalc[index6])
                     }
                     image.setRows(index5, buf)
                 }
