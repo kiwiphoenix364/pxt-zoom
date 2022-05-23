@@ -47,6 +47,7 @@ namespace Zoom {
             pause(50)
         }})
         let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
+            for (let repeat = 0; repeat < time / 50; repeat++) {
             let screenclone = image.clone()
             let left = (screen.width - screen.width / realsize) / 2
             let top = (screen.height - screen.height / realsize) / 2
@@ -62,8 +63,11 @@ namespace Zoom {
                 }
                 image.setRows(index5, buf)
             }
+        pause(50)
+        }
         }
         )
+        
         control.runInParallel(() => {pause(time)
         variable.destroy()
         })
