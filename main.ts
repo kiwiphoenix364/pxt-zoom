@@ -63,7 +63,7 @@ namespace Zoom {
         )
         control.runInParallel(() => variable.destroy())
         realsize =+ dif / time / control.eventContext().deltaTime
-        control.runInParallel(() => pause(control.eventContext().deltaTime))
+        pause(control.eventContext().deltaTime)
         }
     }
 }
