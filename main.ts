@@ -60,9 +60,10 @@ namespace Zoom {
                 }
                 image.setRows(index5, buf)
             }
-        pause(50)
+        
         }
         )
+        pause(50)
         control.runInParallel(() => variable.destroy())
         }
         }
