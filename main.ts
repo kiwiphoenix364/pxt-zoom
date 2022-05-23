@@ -60,7 +60,7 @@ namespace Zoom {
                 }
                 image.setRows(index5, buf)
             }
-        pause(1)
+        pause(50)
         }
         }
         )
