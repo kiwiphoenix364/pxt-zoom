@@ -1,8 +1,8 @@
 //% color="#f76820"
 namespace Zoom {
     //% block
-    //% block="Zoom In Screen Image Using On Game Update By $size Times"
-    export function SetBlurFilter(size: number) {
+    //% block="Zoom In Screen Image By %size Times Using On Game Update"
+    export function SetZoomFilter(size: number) {
             let zLayer = 0
             let savedx = 0
             let buf = Buffer.create(120)
