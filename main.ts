@@ -64,7 +64,8 @@ namespace Zoom {
             }
         }
         )
-        control.runInParallel(() => pause(time))
-        control.runInParallel(() => variable.destroy())
+        control.runInParallel(() => {pause(time)
+        variable.destroy()
+        })
         }
 }
