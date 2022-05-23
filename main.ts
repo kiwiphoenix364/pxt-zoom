@@ -33,7 +33,7 @@ namespace Zoom {
     //% block
     //% block="Zoom In Screen Image From %size Times To %size2 Times Over %time ms"
     export function SetZoomFilterFrom__To__(size: number, size2: number, time: number) {
-        let dif = size - size2
+        let dif = size2 - size
         let realsize = size
         let zLayer = 0
         let savedx = 0
@@ -60,7 +60,7 @@ namespace Zoom {
                 }
                 image.setRows(index5, buf)
             }
-        pause(50)
+                control.runInParallel(() => pause(50))
         }
         }
         )
