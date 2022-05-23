@@ -44,7 +44,7 @@ namespace Zoom {
         precalc2 = []
         control.runInParallel(() => {for (let repeat = 0; repeat < time / 50; repeat++) {
             realsize = + dif / time / 50
-            control.runInParallel(() => pause(50))
+            pause(50)
         }})
         let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
             let screenclone = image.clone()
