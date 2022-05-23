@@ -44,7 +44,7 @@ namespace Zoom {
         precalc2 = [] 
         let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
             for (let repeat = 0; repeat < time / 50; repeat++) {
-            realsize = repeat * dif / (time / 50) + dif / (time / 50)
+            realsize = size + repeat * dif / (time / 50) + dif / (time / 50)
             let screenclone = image.clone()
             let left = (screen.width - screen.width / realsize) / 2
             let top = (screen.height - screen.height / realsize) / 2
