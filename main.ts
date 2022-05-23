@@ -42,9 +42,9 @@ namespace Zoom {
         let precalc2 = [0]
         precalc = []
         precalc2 = [] 
+        for (let repeat = 0; repeat < time / 50; repeat++) {
+        realsize = size + repeat * dif / (time / 50)
         let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
-            for (let repeat = 0; repeat < time / 50; repeat++) {
-            realsize = size + repeat * dif / Math.ceil(time / 50)
             let screenclone = image.clone()
             let left = (screen.width - screen.width / realsize) / 2
             let top = (screen.height - screen.height / realsize) / 2
@@ -62,11 +62,8 @@ namespace Zoom {
             }
         pause(50)
         }
-        }
         )
-        
-        control.runInParallel(() => {pause(time)
-        variable.destroy()
-        })
+        control.runInParallel(() => variable.destroy())
+        }
         }
 }
