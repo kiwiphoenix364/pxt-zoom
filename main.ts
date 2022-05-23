@@ -43,7 +43,7 @@ namespace Zoom {
         precalc = []
         precalc2 = []
         control.runInParallel(() => {for (let repeat = 0; repeat < time / 50; repeat++) {
-            realsize += dif / time / 50
+            realsize += dif / time
             pause(50)
         }})
         let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
