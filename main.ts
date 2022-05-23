@@ -22,7 +22,7 @@ namespace Zoom {
                 }
                 for (let index5 = 0; index5 < 160; index5++) {
                     for (let index6 = 0; index6 < 120; index6++) {
-                        buf[index6] = image.getPixel(precalc2[index5], precalc[index6])
+                        buf[index6] = screenclone.getPixel(precalc2[index5], precalc[index6])
                     }
                     image.setRows(index5, buf)
                 }
