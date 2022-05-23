@@ -15,10 +15,10 @@ namespace Zoom {
                 let left = (screen.width - screen.width / size) / 2
                 let top = (screen.height - screen.height / size) / 2
                 for (let index = 0; index < 160; index++) {
-                    precalc2.push(Math.round(index / size) + left)
+                    precalc2.push((index / size) + left)
                 }
                 for (let index3 = 0; index3 < 120; index3++) {
-                    precalc.push(Math.round(index3 / size) + top)
+                    precalc.push((index3 / size) + top)
                 }
                 for (let index5 = 0; index5 < 160; index5++) {
                     for (let index6 = 0; index6 < 120; index6++) {
