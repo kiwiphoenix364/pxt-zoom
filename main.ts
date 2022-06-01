@@ -26,7 +26,7 @@ namespace Zoom {
     //% picker.fieldOptions.columns=1
     //% picker=Mode
     //% block="Zoom In Screen Image By %size Times Using On Game Update Anchor $mode"
-    export function SetZoomFilter(size: number, Anchor: Mode) {
+    export function SetZoomFilter(size: number, anchor: Mode) {
             let zLayer = 0
             let savedx = 0
             let buf = Buffer.create(120)
@@ -38,14 +38,14 @@ namespace Zoom {
                 let screenclone = image.clone()
                 let left = 0
                 let top = 0
-                if (Anchor == 0 || Anchor == 2 || Anchor == 7) {
+                if (anchor == 0 || anchor == 2 || anchor == 7) {
                     left = (screen.width - screen.width / size) / 2
-                } else if (Anchor == 3 || Anchor == 5 || Anchor == 8) {
+                } else if (anchor == 3 || anchor == 5 || anchor == 8) {
                     left = (screen.width - screen.width / size)
                 }
-                if (Anchor == 0 || Anchor == 4 || Anchor == 5) {
+                if (anchor == 0 || anchor == 4 || anchor == 5) {
                     top = (screen.height - screen.height / size) / 2
-                } else if (Anchor == 6 || Anchor == 7 || Anchor == 8) {
+                } else if (anchor == 6 || anchor == 7 || anchor == 8) {
                     top = (screen.height - screen.height / size)
                 }
                 for (let index = 0; index < 160; index++) {
