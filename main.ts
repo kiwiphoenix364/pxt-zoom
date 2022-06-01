@@ -25,7 +25,7 @@ namespace Zoom {
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
     //% picker=Mode
-    //% block="Zoom In Screen Image By %size Times Using On Game Update Anchor $mode a"
+    //% block="Zoom In Screen Image By %size Times Using On Game Update Anchor $Mode a"
     export function SetZoomFilter(size: number, anchor: Mode) {
             let zLayer = 0
             let savedx = 0
