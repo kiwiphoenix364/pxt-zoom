@@ -1,8 +1,32 @@
+enum Mode {
+    //% block="Center"
+    Center,
+    //% block="Top-Left"
+    TopLeft,
+    //% block="Top"
+    Top,
+    //% block="Top-Right"
+    TopRight,
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right,
+    //% block="Bottom-Left"
+    BottomLeft,
+    //% block="Bottom"
+    Bottom,
+    //% block="Bottom-Right"
+    BottomRight
+}
 //% color="#f76820"
 namespace Zoom {
     //% block
-    //% block="Zoom In Screen Image By %size Times Using On Game Update"
-    export function SetZoomFilter(size: number) {
+    //% picker.fieldEditor="gridpicker"
+    //% picker.fieldOptions.width=220
+    //% picker.fieldOptions.columns=1
+    //% picker=Mode
+    //% block="Zoom In Screen Image By %size Times Using On Game Update Anchor $Mode"
+    export function SetZoomFilter(size: number, Anchor: Mode) {
             let zLayer = 0
             let savedx = 0
             let buf = Buffer.create(120)
@@ -12,8 +36,18 @@ namespace Zoom {
             precalc2 = []
             let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
                 let screenclone = image.clone()
-                let left = (screen.width - screen.width / size) / 2
-                let top = (screen.height - screen.height / size) / 2
+                let left = 0
+                let top = 0
+                if (Anchor == 0 || Anchor == 2 || Anchor == 7) {
+                    left = (screen.width - screen.width / size) / 2
+                } else if (Anchor == 3 || Anchor == 5 || Anchor == 8) {
+                    left = (screen.width - screen.width / size)
+                }
+                if (Anchor == 0 || Anchor == 4 || Anchor == 5) {
+                    top = (screen.height - screen.height / size) / 2
+                } else if (Anchor == 6 || Anchor == 7 || Anchor == 8) {
+                    top = (screen.height - screen.height / size)
+                }
                 for (let index = 0; index < 160; index++) {
                     precalc2.push((index / size) + left)
                 }
