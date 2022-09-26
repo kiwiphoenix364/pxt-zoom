@@ -5,18 +5,16 @@ let y1 = 1
 y1 = 0
 let buf = Buffer.create(120)
 let zLayer = 1
-let savedx = 1
-let multnum = 1
 let left = 1
 let top = 1
+let precalc = [0]
 let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
     left = ((screen.width - screen.width / size1) / 2) + x1
     top = ((screen.height - screen.height / size1) / 2) + y1
-    multnum = 1 / size1
     let screenclone = image.clone()
     for (let index5 = 0; index5 < 160; index5++) {
         for (let index6 = 0; index6 < 120; index6++) {
-            buf[index6] = screenclone.getPixel(multnum * index5 + left, multnum * index6 + top)
+            buf[index6] = screenclone.getPixel(precalc[index5] + left, precalc[index6] + top)
         }
         image.setRows(index5, buf)
     }
@@ -93,5 +91,9 @@ namespace Zoom {
             size1 = size
             x1 = x
             y1 = y
+        precalc = []
+        for (let index = 0; index < 160; index++) {
+            precalc.push(index / size1)
+        }
         }
 }
