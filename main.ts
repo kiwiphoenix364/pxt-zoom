@@ -32,7 +32,7 @@ enum Mode {
     //% block="Bottom-Right"
     BottomRight
 }
-//% color="#f0ecec"
+//% color="#e8dce4"
 namespace Zoom {
     //% block="zoom in screen image to %size times with anchor $anchor || over $ms ms"
     //% picker.fieldEditor="gridpicker"
