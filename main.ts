@@ -38,7 +38,7 @@ namespace Zoom {
     //% picker.fieldOptions.columns=1
     //% picker=Mode
     //% ms.shadow="timePicker"
-    //% expandableArgumentMode="toggle"
+    //% expandableArgumentMode="enabled"
     export function SetZoomFilter(size: number, anchor: Mode, ms: number) {
             memsize = size - size1
             for (let i = 0; i < ms / (25) + 1; i++) {
@@ -58,7 +58,7 @@ namespace Zoom {
         }
     //% block="zoom in screen image to %size times with offset x $x y $y || over $ms ms"
     //% ms.shadow="timePicker"
-    //% expandableArgumentMode="toggle"
+    //% expandableArgumentMode="enabled"
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms: number) {
             memsize = size - size1
             for (let j = 0; j < ms / (25) + 1; j++) {
