@@ -62,8 +62,8 @@ namespace Zoom {
             memsize = size - size1
             for (let i = 0; i < ms / (25); i++) {
                 size1 = size1 + memsize / (ms / 25)
-                x1 = x + 80 - size1 * 80 - ((160 - (160 / size1)) / 2)
-                y1 = y + 60 - size1 * 60 - ((120 - (120 / size1)) / 2)
+                x1 = x + 80 - size1 * 80
+                y1 = y + 60 - size1 * 60
                 pause(25)
             }
         }
