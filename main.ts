@@ -1,4 +1,4 @@
-//%color="#f0ecec"
+//% color="#f0ecec"
 let y1 = 0
 let x1 = 0
 let memsize = 1
