@@ -1,24 +1,16 @@
+let memsize = 1
 let size1 = 1
-let x1 = 1
-x1 = 0
-let y1 = 1
-y1 = 0
+let x1 = 0
+let y1 = 0
 let buf = Buffer.create(120)
 let zLayer = 1
 let left = 1
 let top = 1
-let precalc = [0]
 let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
-    left = ((screen.width - screen.width / size1) / 2) + x1
-    top = ((screen.height - screen.height / size1) / 2) + y1
     let screenclone = image.clone()
-    for (let index5 = 0; index5 < 160; index5++) {
-        for (let index6 = 0; index6 < 120; index6++) {
-            buf[index6] = screenclone.getPixel(precalc[index5] + left, precalc[index6] + top)
-        }
-        image.setRows(index5, buf)
-    }
+    helpers.imageBlit(image, 16 % (size1) - 16, 12 % (size1) - 16, 176, 136, screenclone, x1, y1, 160 / size1, 120 / size1, true, false)
 })
+
 enum Mode {
     //% block="Center"
     Center,
@@ -46,54 +38,35 @@ namespace Zoom {
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
     //% picker=Mode
-    //% block="Zoom In Screen Image By %size Times Using On Game Update Anchor $anchor"
-    export function SetZoomFilter(size: number, anchor: Mode) {
-            let zLayer = 0
-            let savedx = 0
-            let buf = Buffer.create(120)
-            let precalc = [0]
-            let precalc2 = [0]
-            precalc = []
-            precalc2 = []
-            let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
-                let screenclone = image.clone()
-                let left = 0
-                let top = 0
-                if (anchor == 0 || anchor == 2 || anchor == 7) {
-                    left = (screen.width - screen.width / size) / 2
-                } else if (anchor == 3 || anchor == 5 || anchor == 8) {
-                    left = (screen.width - screen.width / size)
-                }
-                if (anchor == 0 || anchor == 4 || anchor == 5) {
-                    top = (screen.height - screen.height / size) / 2
-                } else if (anchor == 6 || anchor == 7 || anchor == 8) {
-                    top = (screen.height - screen.height / size)
-                }
-                for (let index = 0; index < 160; index++) {
-                    precalc2.push((index / size) + left)
-                }
-                for (let index3 = 0; index3 < 120; index3++) {
-                    precalc.push((index3 / size) + top)
-                }
-                for (let index5 = 0; index5 < 160; index5++) {
-                    for (let index6 = 0; index6 < 120; index6++) {
-                        buf[index6] = screenclone.getPixel(precalc2[index5], precalc[index6])
-                    }
-                    image.setRows(index5, buf)
-                }
+    //% block="zoom in screen image to %size times with anchor $anchor over $ms ms"
+    export function SetZoomFilter(size: number, anchor: Mode, ms: number) {
+            size1 = size
+            if (anchor == 0 || anchor == 2 || anchor == 7) {
+                x1 = (160 - (160 / size1)) / 2
+            } else if (anchor == 3 || anchor == 5 || anchor == 8) {
+                x1 = 160 - (160 / size1)
             }
-            )
-            control.runInParallel(() => variable.destroy())
+            if (anchor == 0 || anchor == 4 || anchor == 5) {
+                y1 = (120 - (120 / size1)) / 2
+            } else if (anchor == 6 || anchor == 7 || anchor == 8) {
+                y1 = 120 - (120 / size1)
+            }
+            memsize = size1
+            for (let i = 0; i < ms / (25); i++) {
+                size1 = size1 + memsize / (ms / 25)
+                pause(25)
+            }
         }
     //% block
-    //% block="Zoom In Screen Image By %size Times Using On Game Update With Offset x $x y $y"
-    export function SetZoomFilterOffset(size: number, x: number, y: number) {
-            size1 = size
-            x1 = x
-            y1 = y
-        precalc = []
-        for (let index = 0; index < 160; index++) {
-            precalc.push(index / size1)
-        }
+    //% block="zoom in screen image to %size times with offset x $x y $y over $ms ms"
+    export function SetZoomFilterOffset(size: number, x: number, y: number, ms: number) {
+            
+            memsize = size - size1
+            for (let i = 0; i < ms / (25); i++) {
+                size1 = size1 + memsize / (ms / 25)
+                x1 = x + (160 - (160 / size1)) / 2
+                y1 = y + (120 - (120 / size1)) / 2
+                pause(25)
+            }
         }
 }
