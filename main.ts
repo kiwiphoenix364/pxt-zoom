@@ -61,10 +61,10 @@ namespace Zoom {
                 pause(25)
             }
         }
-    //% block="set screen zoom to $size times || with offset x $x y $y | over $ms ms"
+    //% block="screen zoom to $size offset x $x y $y || over $ms ms"
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
-    export function SetZoomFilterOffset(size: number, x = 0, y = 0, ms = 25) {
+    export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
         if (ms < 25) {
             ms = 25
         }
