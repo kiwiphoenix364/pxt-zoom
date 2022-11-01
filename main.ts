@@ -34,7 +34,7 @@ enum Mode {
 }
 //% color="#3fcbf4"
 namespace Zoom {
-    //% block="zoom in screen image to %size times with anchor $anchor || over $ms ms"
+    //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% picker.fieldEditor="gridpicker"
     //% picker.fieldOptions.width=220
     //% picker.fieldOptions.columns=1
@@ -61,7 +61,7 @@ namespace Zoom {
                 pause(25)
             }
         }
-    //% block="zoom in screen image to %size times with offset x $x y $y || over $ms ms"
+    //% block="set screen zoom to $size times with offset x $x y $y || over $ms ms"
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
