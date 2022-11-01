@@ -1,4 +1,3 @@
-//% color="#f0ecec"
 let y1 = 0
 let x1 = 0
 let memsize = 1
@@ -33,6 +32,7 @@ enum Mode {
     //% block="Bottom-Right"
     BottomRight
 }
+//% color="#f0ecec"
 namespace Zoom {
     //% block="zoom in screen image to %size times with anchor $anchor || over $ms ms"
     //% picker.fieldEditor="gridpicker"
