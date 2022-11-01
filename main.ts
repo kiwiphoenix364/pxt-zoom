@@ -39,10 +39,10 @@ namespace Zoom {
     //% picker=Mode
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
-    export function SetZoomFilter(size: number, anchor: Mode, ms = 0) {
+    export function SetZoomFilter(size: number, anchor: Mode, ms = 25) {
             memsize = size - size1
-            for (let i = 0; i < (ms / 25 + 1); i++) {
-                size1 = size1 + memsize / (ms / 25 + 1)
+            for (let i = 0; i < (ms / 25); i++) {
+                size1 += memsize / (ms / 25)
                 if (anchor == 0 || anchor == 2 || anchor == 7) {
                     x1 = 80 - 80 * size1
                 } else if (anchor == 3 || anchor == 5 || anchor == 8) {
@@ -61,8 +61,8 @@ namespace Zoom {
     //% expandableArgumentMode="toggle"
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 0) {
             memsize = size - size1
-            for (let j = 0; j < (ms / 25 + 1); j++) {
-                size1 = size1 + memsize / (ms / 25 + 1)
+            for (let j = 0; j < (ms / 25); j++) {
+                size1 += memsize / (ms / 25)
                 x1 = x + 80 - size1 * 80
                 y1 = y + 60 - size1 * 60
                 pause(25)
