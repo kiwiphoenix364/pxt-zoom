@@ -41,7 +41,7 @@ namespace Zoom {
     //% block="zoom in screen image to %size times with anchor $anchor || over $ms ms"
     export function SetZoomFilter(size: number, anchor: Mode, ms: number) {
             memsize = size - size1
-            for (let i = 0; i < ms / (25); i++) {
+            for (let i = 0; i < ms / (25) + 1; i++) {
                 size1 = size1 + memsize / (ms / 25)
                 if (anchor == 0 || anchor == 2 || anchor == 7) {
                     x1 = 80 - 80 * size1
@@ -61,7 +61,7 @@ namespace Zoom {
     //% block="zoom in screen image to %size times with offset x $x y $y || over $ms ms"
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms: number) {
             memsize = size - size1
-            for (let j = 0; j < ms / (25); j++) {
+            for (let j = 0; j < ms / (25) + 1; j++) {
                 size1 = size1 + memsize / (ms / 25)
                 x1 = x + 80 - size1 * 80
                 y1 = y + 60 - size1 * 60
