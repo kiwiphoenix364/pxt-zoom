@@ -123,6 +123,6 @@ scene.setBackgroundImage(img`
 `)
 Zoom.SetZoomFilterOffset(8, 0, 0, 0)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
-    Zoom.SetZoomFilterOffset(8, 0, 0, 10000)
+    Zoom.SetZoomFilter(3, Mode.Center, 1000)
 })
 
