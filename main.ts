@@ -9,6 +9,7 @@ let top = 1
 let variable = scene.createRenderable(zLayer, (image: Image, camera: scene.Camera) => {
     let screenclone = image.clone()
     //helpers.imageBlit(image, (x1 - Math.trunc(x1)) * - size1, (y1 - Math.trunc(y1)) * - size1, 160 + Math.ceil(size1), 120 + Math.ceil(size1), screenclone, x1, y1, (160 - Math.ceil(size1)) / size1, (120 - Math.ceil(size1)) / size1, true, false)
+    image.fillRect(0, 0, 159, 159, 0)
     helpers.imageBlit(image, x1, y1, 160 * size1, 120 * size1, screenclone, 0, 0, 159, 119, true, false)
 })
 enum Mode {
