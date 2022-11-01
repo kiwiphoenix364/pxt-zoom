@@ -40,6 +40,9 @@ namespace Zoom {
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     export function SetZoomFilter(size: number, anchor: Mode, ms = 25) {
+        if (ms < 25) {
+            ms = 25
+        }
             memsize = size - size1
             for (let i = 0; i < (ms / 25); i++) {
                 size1 += memsize / (ms / 25)
@@ -59,7 +62,10 @@ namespace Zoom {
     //% block="zoom in screen image to %size times with offset x $x y $y || over $ms ms"
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
-    export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 0) {
+    export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
+        if (ms < 25) {
+            ms = 25
+        }
             memsize = size - size1
             for (let j = 0; j < (ms / 25); j++) {
                 size1 += memsize / (ms / 25)
