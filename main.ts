@@ -62,7 +62,7 @@ namespace Zoom {
                 pause(25)
             }
         }
-    //% block="set screen zoom to | $size times | with offset x $x | y $y || over $ms ms"
+    //% block="set screen zoom to | $size times | with offset x $x y $y || over $ms ms"
     //% weight=1
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
