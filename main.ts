@@ -61,7 +61,7 @@ namespace Zoom {
                 pause(25)
             }
         }
-    //% block="screen zoom to $size offset x $x y $y || over $ms ms"
+    //% block="screen zoom to $size times| with offset x $x| y $y || over $ms ms"
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
