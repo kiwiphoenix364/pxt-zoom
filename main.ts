@@ -1,13 +1,13 @@
 let y1 = 0
 let x1 = 0
-let memsize1 = 1
+let memsize1 = 0
 let size1 = 1
 let zLayer1 = 1
 let variable = scene.createRenderable(zLayer1, (image: Image, camera: scene.Camera) => {
     let screenclone = image.clone()
     //helpers.imageBlit(image, (x1 - Math.trunc(x1)) * - size1, (y1 - Math.trunc(y1)) * - size1, 160 + Math.ceil(size1), 120 + Math.ceil(size1), screenclone, x1, y1, (160 - Math.ceil(size1)) / size1, (120 - Math.ceil(size1)) / size1, true, false)
     image.fillRect(0, 0, 160, 120, 0)
-    helpers.imageBlit(image, x1 - 1, y1 - 1, 160 * size1, 120 * size1, screenclone, 0, 0, 159, 119, true, false)
+    helpers.imageBlit(image, x1, y1, 160 * size1, 120 * size1, screenclone, 0, 0, 160, 120, true, false)
 })
 enum Mode {
     //% block="Center"
