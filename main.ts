@@ -80,18 +80,3 @@ namespace Zoom {
             }
         }
 }
-namespace userconfig {
-    // doubled screen size on browser
-    export const ARCADE_SCREEN_WIDTH = 160
-    export const ARCADE_SCREEN_HEIGHT = 120
-    
-
-    
-
-        
-        
-        
-    
-   
-
-}
