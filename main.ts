@@ -1,5 +1,4 @@
-const resX = 160
-const resY = 120
+
 let y1 = 0
 let x1 = 0
 let memsize1 = 0
@@ -92,10 +91,12 @@ namespace userconfig {
     // doubled screen size on browser
 
     
-        forever(function() {
-            const ARCADE_SCREEN_WIDTH = resX
-        const ARCADE_SCREEN_HEIGHT = resY
-        })
+
+    export const ARCADE_SCREEN_WIDTH = resX
+    export const ARCADE_SCREEN_HEIGHT = resY
+
+        
+        
         
     
    
