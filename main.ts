@@ -79,21 +79,14 @@ namespace Zoom {
                 pause(25)
             }
         }
-    //% block="set screen resolution to $size times normal resolution"
-    //% weight=3
-    //% group=Experimental
-    export function setResMultiplier(size: number) {
-    const resX = 160 * size
-    const resY = 120 * size
-    }
 }
 namespace userconfig {
     // doubled screen size on browser
-
+    export const ARCADE_SCREEN_WIDTH = 160
+    export const ARCADE_SCREEN_HEIGHT = 120
     
 
-    export const ARCADE_SCREEN_WIDTH = resX
-    export const ARCADE_SCREEN_HEIGHT = resY
+    
 
         
         
