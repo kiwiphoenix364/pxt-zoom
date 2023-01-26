@@ -90,7 +90,14 @@ namespace Zoom {
 }
 namespace userconfig {
     // doubled screen size on browser
-    export const ARCADE_SCREEN_WIDTH = resX
-    export const ARCADE_SCREEN_HEIGHT = resY
+
+    
+        forever(function() {
+            const ARCADE_SCREEN_WIDTH = resX
+        const ARCADE_SCREEN_HEIGHT = resY
+        })
+        
+    
+   
 
 }
