@@ -1,3 +1,5 @@
+const resX = 160
+const resY = 120
 let y1 = 0
 let x1 = 0
 let memsize1 = 0
@@ -30,6 +32,7 @@ enum Mode {
     BottomRight
 }
 //% color="#3fcbf4"
+//% groups='["Normal", "Experimental"]'
 namespace Zoom {
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=2
@@ -39,6 +42,7 @@ namespace Zoom {
     //% picker=Mode
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
+    //% group=Normal
     export function SetZoomFilter(size: number, anchor: Mode, ms = 25) {
         if (ms < 25) {
             ms = 25
@@ -63,6 +67,7 @@ namespace Zoom {
     //% weight=1
     //% ms.shadow="timePicker"
     //% expandableArgumentMode="toggle"
+    //% group=Normal
     export function SetZoomFilterOffset(size: number, x: number, y: number, ms = 25) {
         if (ms < 25) {
             ms = 25
@@ -75,4 +80,17 @@ namespace Zoom {
                 pause(25)
             }
         }
+    //% block="set screen resolution to $size times normal resolution"
+    //% weight=3
+    //% group=Experimental
+    export function setResMultiplier(size: number) {
+    const resX = 160 * size
+    const resY = 120 * size
+    }
+}
+namespace userconfig {
+    // doubled screen size on browser
+    export const ARCADE_SCREEN_WIDTH = resX
+    export const ARCADE_SCREEN_HEIGHT = resY
+
 }
