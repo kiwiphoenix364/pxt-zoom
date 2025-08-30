@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"3.0.0","target":"arcade","targetVersion":"2.0.56","repo":"kiwiphoenix364/pxt-zoom"}
-// total=1702350 new=30.20% cached=65.56% other=4.25%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"3.0.1","target":"arcade","targetVersion":"2.0.56","repo":"kiwiphoenix364/pxt-zoom"}
+// total=1705562 new=30.25% cached=65.51% other=4.24%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -439,7 +439,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P205016(s) {
+function _main___P219425(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -844,7 +844,7 @@ switch (step) {
     s.callLocIdx = 63; s.pc = 37; return s.tmp_0;
   case 37:
     r0 = s.retval;
-    s.tmp_0 = Zoom_SetZoomFilterOffset__P204688_mk(s);
+    s.tmp_0 = Zoom_SetZoomFilterOffset__P218970_mk(s);
     s.tmp_0.arg0 = 8;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 0;
@@ -865,21 +865,21 @@ switch (step) {
   case 40:
     r0 = s.retval;
     s.tmp_0 = game_addScenePushHandler__P184876_mk(s);
-    s.tmp_0.arg0 = Zoom_inline__P204953;
-    s.callLocIdx = 77; s.pc = 41; return s.tmp_0;
+    s.tmp_0.arg0 = Zoom_inline__P219257;
+    s.callLocIdx = 79; s.pc = 41; return s.tmp_0;
   case 41:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-_main___P205016.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P205016.continuations = [  ]
+_main___P219425.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P219425.continuations = [  ]
 
-function _main___P205016_mk(s) {
+function _main___P219425_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P205016, depth: s.depth + 1,
+        parent: s, fn: _main___P219425, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1429,7 +1429,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = Zoom_SetZoomFilter__P204689_mk(s);
+    s.tmp_0 = Zoom_SetZoomFilter__P218971_mk(s);
     s.tmp_0.arg0 = 3;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 1000;
@@ -1481,7 +1481,7 @@ function inline__P202807_mk(s) {
 
 
 
-function Zoom_inline__P204953(s) {
+function Zoom_inline__P219257(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1491,18 +1491,122 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    globals.zoomLayer___204691 = (undefined);
+    r0 = pxsim_numops_toBoolDecr(globals.zoomLayer___218973);
+    if (!r0) { step = 1; continue; }
+    s.tmp_0 = Zoom_Zoomable_destroy__P218977_mk(s);
+    s.tmp_0.arg0 = globals.zoomLayer___218973;
+    s.callLocIdx = 78; s.pc = 3; return s.tmp_0;
+  case 3:
+    r0 = s.retval;
+    globals.zoomLayer___218973 = (undefined);
+  case 1:
+  case 2:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_inline__P204953.info = {"start":3792,"length":43,"line":100,"column":29,"endLine":102,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+Zoom_inline__P219257.info = {"start":3982,"length":114,"line":104,"column":29,"endLine":109,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function Zoom_inline__P204953_mk(s) {
+function Zoom_inline__P219257_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_inline__P204953, depth: s.depth + 1,
+        parent: s, fn: Zoom_inline__P219257, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Zoom_Zoomable_destroy__P218977(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Zoom_Zoomable__C218974_VT)) failedCast(r0);
+    s.tmp_0 = scene_Renderable_destroy__P184645_mk(s);
+    r0 = s.arg0.fields["variable"];
+    s.tmp_0.arg0 = r0;
+    s.callLocIdx = 73; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = (s.arg0).fields["variable"] = (null);
+    r0 = (s.arg0).fields["sh"] = (null);
+    r0 = (s.arg0).fields["sw"] = (null);
+    r0 = (s.arg0).fields["zLayer1"] = (null);
+    r0 = (s.arg0).fields["size1"] = (null);
+    r0 = (s.arg0).fields["memsize1"] = (null);
+    r0 = (s.arg0).fields["x1"] = (null);
+    r0 = (s.arg0).fields["y1"] = (null);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Zoom_Zoomable_destroy__P218977.info = {"start":2819,"length":181,"line":73,"column":8,"endLine":76,"endColumn":9,"fileName":"main.ts","functionName":"destroy","argumentNames":["this"]}
+
+function Zoom_Zoomable_destroy__P218977_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Zoom_Zoomable_destroy__P218977, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function scene_Renderable_destroy__P184645(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.s___208060 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, scene_Renderable__C184641_VT)) failedCast(r0);
+    s.tmp_0 = game_currentScene__P184857_mk(s);
+    s.callLocIdx = 36; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    s.s___208060 = (r0);
+    r0 = s.s___208060.fields["allSprites"];
+    s.tmp_0 = r0;
+    r0 = pxsim_Array_.removeElement(s.tmp_0, s.arg0);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+scene_Renderable_destroy__P184645.info = {"start":486,"length":110,"line":18,"column":8,"endLine":21,"endColumn":9,"fileName":"pxt_modules/game/renderable.ts","functionName":"destroy","argumentNames":["this"]}
+
+function scene_Renderable_destroy__P184645_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: scene_Renderable_destroy__P184645, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  s___208060: undefined,
+  arg0: undefined,
 } }
 
 
@@ -1850,7 +1954,7 @@ function helpers_arrayForEach__P181933_mk(s) {
 
 
 
-function Zoom_SetZoomFilter__P204689(s) {
+function Zoom_SetZoomFilter__P218971(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1866,40 +1970,40 @@ switch (step) {
       s.arg2 = (s.lambdaArgs[2]);
       s.lambdaArgs = null;
     }
-    r0 = pxsim_numops_toBoolDecr(globals.zoomLayer___204691);
+    r0 = pxsim_numops_toBoolDecr(globals.zoomLayer___218973);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    r0 = pxsim_pxtcore_mkClassInstance(Zoom_Zoomable__C204692_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(Zoom_Zoomable__C218974_VT);
     s.tmp_2 = r0;
-    s.tmp_3 = Zoom_Zoomable_constructor__P204695_mk(s);
+    s.tmp_3 = Zoom_Zoomable_constructor__P218978_mk(s);
     s.tmp_3.arg0 = s.tmp_2;
-    s.callLocIdx = 73; s.pc = 3; return s.tmp_3;
+    s.callLocIdx = 74; s.pc = 3; return s.tmp_3;
   case 3:
     r0 = s.retval;
-    globals.zoomLayer___204691 = (s.tmp_2);
+    globals.zoomLayer___218973 = (s.tmp_2);
   case 1:
   case 2:
-    s.tmp_0 = Zoom_Zoomable_SetZoomFilter__P204693_mk(s);
-    s.tmp_0.arg0 = globals.zoomLayer___204691;
+    s.tmp_0 = Zoom_Zoomable_SetZoomFilter__P218975_mk(s);
+    s.tmp_0.arg0 = globals.zoomLayer___218973;
     s.tmp_0.arg1 = s.arg0;
     s.tmp_0.arg2 = s.arg1;
     s.tmp_0.arg3 = s.arg2;
-    s.callLocIdx = 74; s.pc = 4; return s.tmp_0;
+    s.callLocIdx = 75; s.pc = 4; return s.tmp_0;
   case 4:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_SetZoomFilter__P204689.info = {"start":3148,"length":197,"line":83,"column":4,"endLine":88,"endColumn":5,"fileName":"main.ts","functionName":"SetZoomFilter","argumentNames":["size","anchor","ms"]}
+Zoom_SetZoomFilter__P218971.info = {"start":3338,"length":197,"line":87,"column":4,"endLine":92,"endColumn":5,"fileName":"main.ts","functionName":"SetZoomFilter","argumentNames":["size","anchor","ms"]}
 
-function Zoom_SetZoomFilter__P204689_mk(s) {
+function Zoom_SetZoomFilter__P218971_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_SetZoomFilter__P204689, depth: s.depth + 1,
+        parent: s, fn: Zoom_SetZoomFilter__P218971, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1914,7 +2018,7 @@ function Zoom_SetZoomFilter__P204689_mk(s) {
 
 
 
-function Zoom_Zoomable_SetZoomFilter__P204693(s) {
+function Zoom_Zoomable_SetZoomFilter__P218975(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1924,7 +2028,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.i___204762 = undefined;
+    s.i___219045 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -1933,7 +2037,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Zoom_Zoomable__C204692_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Zoom_Zoomable__C218974_VT)) failedCast(r0);
     r0 = (s.arg3 < 25);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
@@ -1947,9 +2051,9 @@ switch (step) {
     r0 = (s.arg1 - s.tmp_2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["memsize1"] = (s.tmp_1);
-    s.i___204762 = (0);
+    s.i___219045 = (0);
   case 3:
-    s.tmp_1 = r0 = s.i___204762;
+    s.tmp_1 = r0 = s.i___219045;
     r0 = (s.arg3 / 25);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -2127,20 +2231,20 @@ switch (step) {
     s.callLocIdx = 71; s.pc = 29; return s.tmp_0;
   case 29:
     r0 = s.retval;
-    r0 = (s.i___204762 + 1);
-    s.i___204762 = (r0);
+    r0 = (s.i___219045 + 1);
+    s.i___219045 = (r0);
     { step = 3; continue; }
   case 28:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_Zoomable_SetZoomFilter__P204693.info = {"start":1405,"length":908,"line":41,"column":8,"endLine":60,"endColumn":9,"fileName":"main.ts","functionName":"SetZoomFilter","argumentNames":["this","size","anchor","ms"]}
+Zoom_Zoomable_SetZoomFilter__P218975.info = {"start":1405,"length":908,"line":41,"column":8,"endLine":60,"endColumn":9,"fileName":"main.ts","functionName":"SetZoomFilter","argumentNames":["this","size","anchor","ms"]}
 
-function Zoom_Zoomable_SetZoomFilter__P204693_mk(s) {
+function Zoom_Zoomable_SetZoomFilter__P218975_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_Zoomable_SetZoomFilter__P204693, depth: s.depth + 1,
+        parent: s, fn: Zoom_Zoomable_SetZoomFilter__P218975, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2153,7 +2257,7 @@ function Zoom_Zoomable_SetZoomFilter__P204693_mk(s) {
   tmp_8: undefined,
   tmp_9: undefined,
   tmp_10: undefined,
-  i___204762: undefined,
+  i___219045: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -2164,7 +2268,7 @@ function Zoom_Zoomable_SetZoomFilter__P204693_mk(s) {
 
 
 
-function Zoom_Zoomable_constructor__P204695(s) {
+function Zoom_Zoomable_constructor__P218978(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2179,7 +2283,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Zoom_Zoomable__C204692_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Zoom_Zoomable__C218974_VT)) failedCast(r0);
     r0 = (s.arg0).fields["y1"] = (0);
     r0 = (s.arg0).fields["x1"] = (0);
     r0 = (s.arg0).fields["memsize1"] = (0);
@@ -2193,7 +2297,7 @@ switch (step) {
     r0 = pxsim_ImageMethods.height(globals.screen___183861);
     s.tmp_3 = r0;
     r0 = (s.tmp_2).fields["sh"] = (s.tmp_3);
-    r0 = pxsim_pxtcore_mkAction(1, Zoom_Zoomable_inline__P204715);
+    r0 = pxsim_pxtcore_mkAction(1, Zoom_Zoomable_inline__P218998);
     s.tmp_4 = r0;
     r0 = pxsim_pxtrt_stclo(s.tmp_4, 0, s.arg0);
     s.tmp_5 = r0 = s.arg0;
@@ -2211,12 +2315,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_Zoomable_constructor__P204695.info = {"start":735,"length":661,"line":33,"column":8,"endLine":40,"endColumn":9,"fileName":"main.ts","functionName":"inline","argumentNames":["this"]}
+Zoom_Zoomable_constructor__P218978.info = {"start":735,"length":661,"line":33,"column":8,"endLine":40,"endColumn":9,"fileName":"main.ts","functionName":"inline","argumentNames":["this"]}
 
-function Zoom_Zoomable_constructor__P204695_mk(s) {
+function Zoom_Zoomable_constructor__P218978_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_Zoomable_constructor__P204695, depth: s.depth + 1,
+        parent: s, fn: Zoom_Zoomable_constructor__P218978, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2233,7 +2337,7 @@ function Zoom_Zoomable_constructor__P204695_mk(s) {
 
 
 
-function Zoom_Zoomable_inline__P204715(s) {
+function Zoom_Zoomable_inline__P218998(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2243,14 +2347,14 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.screenclone___204718 = undefined;
+    s.screenclone___219001 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = pxsim_ImageMethods.clone(s.arg0);
-    s.screenclone___204718 = (r0);
+    s.screenclone___219001 = (r0);
     s.tmp_0 = helpers_imageFillRect__P183785_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = 0;
@@ -2281,7 +2385,7 @@ switch (step) {
     s.tmp_4 = r0;
     r0 = (s.tmp_3 * s.tmp_4);
     s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.screenclone___204718;
+    s.tmp_0.arg5 = s.screenclone___219001;
     s.tmp_0.arg6 = 0;
     s.tmp_0.arg7 = 0;
     r0 = s.caps[0].fields["sw"];
@@ -2297,19 +2401,19 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_Zoomable_inline__P204715.info = {"start":816,"length":569,"line":34,"column":65,"endLine":39,"endColumn":13,"fileName":"main.ts","functionName":"inline","argumentNames":["image","camera"]}
+Zoom_Zoomable_inline__P218998.info = {"start":816,"length":569,"line":34,"column":65,"endLine":39,"endColumn":13,"fileName":"main.ts","functionName":"inline","argumentNames":["image","camera"]}
 
-function Zoom_Zoomable_inline__P204715_mk(s) {
+function Zoom_Zoomable_inline__P218998_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_Zoomable_inline__P204715, depth: s.depth + 1,
+        parent: s, fn: Zoom_Zoomable_inline__P218998, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  screenclone___204718: undefined,
+  screenclone___219001: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -3962,7 +4066,7 @@ function control_EventHandler_register_inline__P189377_mk(s) {
 
 
 
-function Zoom_SetZoomFilterOffset__P204688(s) {
+function Zoom_SetZoomFilterOffset__P218970(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -3979,41 +4083,41 @@ switch (step) {
       s.arg3 = (s.lambdaArgs[3]);
       s.lambdaArgs = null;
     }
-    r0 = pxsim_numops_toBoolDecr(globals.zoomLayer___204691);
+    r0 = pxsim_numops_toBoolDecr(globals.zoomLayer___218973);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    r0 = pxsim_pxtcore_mkClassInstance(Zoom_Zoomable__C204692_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(Zoom_Zoomable__C218974_VT);
     s.tmp_2 = r0;
-    s.tmp_3 = Zoom_Zoomable_constructor__P204695_mk(s);
+    s.tmp_3 = Zoom_Zoomable_constructor__P218978_mk(s);
     s.tmp_3.arg0 = s.tmp_2;
-    s.callLocIdx = 75; s.pc = 3; return s.tmp_3;
+    s.callLocIdx = 76; s.pc = 3; return s.tmp_3;
   case 3:
     r0 = s.retval;
-    globals.zoomLayer___204691 = (s.tmp_2);
+    globals.zoomLayer___218973 = (s.tmp_2);
   case 1:
   case 2:
-    s.tmp_0 = Zoom_Zoomable_SetZoomFilterOffset__P204694_mk(s);
-    s.tmp_0.arg0 = globals.zoomLayer___204691;
+    s.tmp_0 = Zoom_Zoomable_SetZoomFilterOffset__P218976_mk(s);
+    s.tmp_0.arg0 = globals.zoomLayer___218973;
     s.tmp_0.arg1 = s.arg0;
     s.tmp_0.arg2 = s.arg1;
     s.tmp_0.arg3 = s.arg2;
     s.tmp_0.arg4 = s.arg3;
-    s.callLocIdx = 76; s.pc = 4; return s.tmp_0;
+    s.callLocIdx = 77; s.pc = 4; return s.tmp_0;
   case 4:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_SetZoomFilterOffset__P204688.info = {"start":3547,"length":215,"line":94,"column":4,"endLine":99,"endColumn":5,"fileName":"main.ts","functionName":"SetZoomFilterOffset","argumentNames":["size","x","y","ms"]}
+Zoom_SetZoomFilterOffset__P218970.info = {"start":3737,"length":215,"line":98,"column":4,"endLine":103,"endColumn":5,"fileName":"main.ts","functionName":"SetZoomFilterOffset","argumentNames":["size","x","y","ms"]}
 
-function Zoom_SetZoomFilterOffset__P204688_mk(s) {
+function Zoom_SetZoomFilterOffset__P218970_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_SetZoomFilterOffset__P204688, depth: s.depth + 1,
+        parent: s, fn: Zoom_SetZoomFilterOffset__P218970, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4029,7 +4133,7 @@ function Zoom_SetZoomFilterOffset__P204688_mk(s) {
 
 
 
-function Zoom_Zoomable_SetZoomFilterOffset__P204694(s) {
+function Zoom_Zoomable_SetZoomFilterOffset__P218976(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4039,7 +4143,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.j___204874 = undefined;
+    s.j___219157 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -4049,7 +4153,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Zoom_Zoomable__C204692_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Zoom_Zoomable__C218974_VT)) failedCast(r0);
     r0 = (s.arg4 < 25);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
@@ -4063,9 +4167,9 @@ switch (step) {
     r0 = (s.arg1 - s.tmp_2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["memsize1"] = (s.tmp_1);
-    s.j___204874 = (0);
+    s.j___219157 = (0);
   case 3:
-    s.tmp_1 = r0 = s.j___204874;
+    s.tmp_1 = r0 = s.j___219157;
     r0 = (s.arg4 / 25);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -4129,20 +4233,20 @@ switch (step) {
     s.callLocIdx = 72; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
-    r0 = (s.j___204874 + 1);
-    s.j___204874 = (r0);
+    r0 = (s.j___219157 + 1);
+    s.j___219157 = (r0);
     { step = 3; continue; }
   case 4:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Zoom_Zoomable_SetZoomFilterOffset__P204694.info = {"start":2322,"length":488,"line":61,"column":8,"endLine":72,"endColumn":9,"fileName":"main.ts","functionName":"SetZoomFilterOffset","argumentNames":["this","size","x","y","ms"]}
+Zoom_Zoomable_SetZoomFilterOffset__P218976.info = {"start":2322,"length":488,"line":61,"column":8,"endLine":72,"endColumn":9,"fileName":"main.ts","functionName":"SetZoomFilterOffset","argumentNames":["this","size","x","y","ms"]}
 
-function Zoom_Zoomable_SetZoomFilterOffset__P204694_mk(s) {
+function Zoom_Zoomable_SetZoomFilterOffset__P218976_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Zoom_Zoomable_SetZoomFilterOffset__P204694, depth: s.depth + 1,
+        parent: s, fn: Zoom_Zoomable_SetZoomFilterOffset__P218976, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4154,7 +4258,7 @@ function Zoom_Zoomable_SetZoomFilterOffset__P204694_mk(s) {
   tmp_7: undefined,
   tmp_8: undefined,
   tmp_9: undefined,
-  j___204874: undefined,
+  j___219157: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -42087,26 +42191,11 @@ const Math_FastRandom__C184915_VT = mkVTable({
     "pickRandom": Math_FastRandom_pickRandom__P184920,
   },
 });
-const scene_GameForeverHandler__C184661_VT = mkVTable({
-  name: "GameForeverHandler",
-  numFields: 2,
-  classNo: 21,
-  lastSubtypeNo: 21,
-  maxBgInstances: null,
-  methods: {
-  },
-  iface: {
-    "lock": null,
-    "set/lock": null,
-    "handler": null,
-    "set/handler": null,
-  },
-});
-const Zoom_Zoomable__C204692_VT = mkVTable({
+const Zoom_Zoomable__C218974_VT = mkVTable({
   name: "Zoomable",
   numFields: 8,
-  classNo: 22,
-  lastSubtypeNo: 22,
+  classNo: 21,
+  lastSubtypeNo: 21,
   maxBgInstances: null,
   methods: {
   },
@@ -42127,15 +42216,16 @@ const Zoom_Zoomable__C204692_VT = mkVTable({
     "set/sh": null,
     "variable": null,
     "set/variable": null,
-    "SetZoomFilter": Zoom_Zoomable_SetZoomFilter__P204693,
-    "SetZoomFilterOffset": Zoom_Zoomable_SetZoomFilterOffset__P204694,
+    "SetZoomFilter": Zoom_Zoomable_SetZoomFilter__P218975,
+    "SetZoomFilterOffset": Zoom_Zoomable_SetZoomFilterOffset__P218976,
+    "destroy": Zoom_Zoomable_destroy__P218977,
   },
 });
 const sprites_BaseSprite__C183932_VT = mkVTable({
   name: "BaseSprite",
   numFields: 2,
-  classNo: 23,
-  lastSubtypeNo: 26,
+  classNo: 22,
+  lastSubtypeNo: 25,
   maxBgInstances: null,
   methods: {
     "__visible": sprites_BaseSprite___visible__P183935,
@@ -42159,8 +42249,8 @@ const sprites_BaseSprite__C183932_VT = mkVTable({
 const scene_Renderable__C184641_VT = mkVTable({
   name: "Renderable",
   numFields: 4,
-  classNo: 24,
-  lastSubtypeNo: 24,
+  classNo: 23,
+  lastSubtypeNo: 23,
   maxBgInstances: null,
   methods: {
     "__visible": scene_Renderable___visible__P184643,
@@ -42179,10 +42269,26 @@ const scene_Renderable__C184641_VT = mkVTable({
     "set/shouldBeVisible": null,
     "__visible": scene_Renderable___visible__P184643,
     "__drawCore": scene_Renderable___drawCore__P184644,
+    "destroy": scene_Renderable_destroy__P184645,
     "z": sprites_BaseSprite_z__P183936,
     "set/z": sprites_BaseSprite_z__P183937,
     "__draw": sprites_BaseSprite___draw__P183938,
     "__update": sprites_BaseSprite___update__P183940,
+  },
+});
+const scene_GameForeverHandler__C184661_VT = mkVTable({
+  name: "GameForeverHandler",
+  numFields: 2,
+  classNo: 26,
+  lastSubtypeNo: 26,
+  maxBgInstances: null,
+  methods: {
+  },
+  iface: {
+    "lock": null,
+    "set/lock": null,
+    "handler": null,
+    "set/handler": null,
   },
 });
 const scene_Scene__C184684_VT = mkVTable({
@@ -42453,8 +42559,8 @@ const scene_BackgroundLayer__C184519_VT = mkVTable({
 const Sprite__C184179_VT = mkVTable({
   name: "Sprite",
   numFields: 31,
-  classNo: 25,
-  lastSubtypeNo: 25,
+  classNo: 24,
+  lastSubtypeNo: 24,
   maxBgInstances: null,
   methods: {
     "__visible": Sprite___visible__P184235,
@@ -42912,8 +43018,8 @@ const game_Hitbox__C184046_VT = mkVTable({
 const particles_ParticleSource__C185007_VT = mkVTable({
   name: "ParticleSource",
   numFields: 13,
-  classNo: 26,
-  lastSubtypeNo: 26,
+  classNo: 25,
+  lastSubtypeNo: 25,
   maxBgInstances: null,
   methods: {
     "__visible": sprites_BaseSprite___visible__P183935,
@@ -43332,7 +43438,7 @@ const sprites_BaseSpriteSayRenderer__C184097_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["zoomLayer___204691"])
+const breakpoints = setupDebugger(1, ["zoomLayer___218973"])
 
-return _main___P205016
+return _main___P219425
 })
