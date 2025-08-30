@@ -33,10 +33,12 @@ namespace Zoom {
         protected variable: scene.Renderable
         constructor() {
             this.variable = scene.createRenderable(this.zLayer1, (image: Image, camera: scene.Camera) => {
-                let screenclone = image.clone()
-                //helpers.imageBlit(image, (x1 - Math.trunc(x1)) * - size1, (y1 - Math.trunc(y1)) * - size1, sw + Math.ceil(size1), sh + Math.ceil(size1), screenclone, x1, y1, (sw - Math.ceil(size1)) / size1, (sh - Math.ceil(size1)) / size1, true, false)
-                image.fillRect(0, 0, this.sw, this.sh, 0)
-                helpers.imageBlit(image, this.x1, this.y1, this.sw * this.size1, this.sh * this.size1, screenclone, 0, 0, this.sw, this.sh, true, false)
+                if (this.size1 != 1) {
+                    let screenclone = image.clone()
+                    //helpers.imageBlit(image, (x1 - Math.trunc(x1)) * - size1, (y1 - Math.trunc(y1)) * - size1, sw + Math.ceil(size1), sh + Math.ceil(size1), screenclone, x1, y1, (sw - Math.ceil(size1)) / size1, (sh - Math.ceil(size1)) / size1, true, false)
+                    image.fillRect(0, 0, this.sw, this.sh, 0)
+                    helpers.imageBlit(image, this.x1, this.y1, this.sw * this.size1, this.sh * this.size1, screenclone, 0, 0, this.sw, this.sh, true, false)
+                }
             })
         }
         public SetZoomFilter(size: number, anchor: Mode, ms = 25) {
