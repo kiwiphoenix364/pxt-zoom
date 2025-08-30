@@ -1,27 +1,27 @@
+enum Mode {
+    //% block="Center"
+    Center,
+    //% block="Top-Left"
+    TopLeft,
+    //% block="Top"
+    Top,
+    //% block="Top-Right"
+    TopRight,
+    //% block="Left"
+    Left,
+    //% block="Right"
+    Right,
+    //% block="Bottom-Left"
+    BottomLeft,
+    //% block="Bottom"
+    Bottom,
+    //% block="Bottom-Right"
+    BottomRight
+}
 //% color="#3fcbf4"
 //% groups='["Normal", "Experimental"]'
 namespace Zoom {
     let zoomLayer: Zoomable
-    export enum Mode {
-        //% block="Center"
-        Center,
-        //% block="Top-Left"
-        TopLeft,
-        //% block="Top"
-        Top,
-        //% block="Top-Right"
-        TopRight,
-        //% block="Left"
-        Left,
-        //% block="Right"
-        Right,
-        //% block="Bottom-Left"
-        BottomLeft,
-        //% block="Bottom"
-        Bottom,
-        //% block="Bottom-Right"
-        BottomRight
-    }
     class Zoomable {
         protected y1 = 0
         protected x1 = 0
