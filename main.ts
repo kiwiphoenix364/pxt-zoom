@@ -71,6 +71,10 @@ namespace Zoom {
                 pause(25)
             }
         }
+        public destroy() {
+            this.variable.destroy()
+            this.y1 = this.x1 = this.memsize1 = this.size1 = this.zLayer1 = this.sw = this.sh = this.variable = null
+        }
     }
     //% block="set screen zoom to $size times with anchor $anchor || over $ms ms"
     //% weight=2
@@ -99,6 +103,7 @@ namespace Zoom {
         zoomLayer.SetZoomFilterOffset(size, x, y, ms)
     }
     game.addScenePushHandler(() => {
+        zoomLayer.destroy()
         zoomLayer = undefined
     })
 }
