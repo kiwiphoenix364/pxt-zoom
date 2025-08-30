@@ -103,7 +103,9 @@ namespace Zoom {
         zoomLayer.SetZoomFilterOffset(size, x, y, ms)
     }
     game.addScenePushHandler(() => {
-        zoomLayer.destroy()
-        zoomLayer = undefined
+        if (zoomLayer) {
+            zoomLayer.destroy()
+            zoomLayer = undefined
+        }
     })
 }
